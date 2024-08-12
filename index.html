@@ -1,28 +1,110 @@
-<form action = 'http://127.0.0.1:3001/process_post' method = 'post'>
-    <p>Personal Information</p>
-    First Name: <input type = "text" name = "first_name"> <br><br>
-    Last Name: <input type = "text" name = "last_name"> <br><br>
-    Contact num: <input type = "text" name = "contact"> <br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            box-sizing: border-box;
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
 
-    <p>What is your Gender</p>
-    <input type="radio" name="gender" value="male" checked> Male
-    <input type="radio" name="gender" value="female"> Female
-    <input type="radio" name="gender" value="other"> Others <br><br>
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
 
-    <select name="status" id="status">
-        <option value="Single">Single</option>
-        <option value="Married">Married</option>
-        <option value="Widowed">Widowed</option>
-        <option value="Divorced" selected>Divorced</option>
-      </select>   
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
 
-<p>What is your vehicle</p>
-    <input type="checkbox" id="vehicle1" name="vehicle" value="Bike">
-    <label for="vehicle1"> I don't have any vehicle </label>
-    <input type="checkbox" id="vehicle2" name="vehicle" value="Car">
-    <label for="vehicle2"> I have a car</label>
-    <input type="checkbox" id="vehicle3" name="vehicle" value="Boat">
-    <label for="vehicle3"> I have a bike</label> <br><br>
+        label {
+            margin-right: 20px;
+            font-size: 1em;
+            color: #333;
+        }
 
-    <input type="submit" value="Submit">
-</form>
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <form action='http://127.0.0.1:3000/process_post' method='post'>
+        <p>Personal Information: </p>
+        First Name: <input type="text" name="first_name"> <br>
+        Last Name: <input type="text" name="last_name"> <br>
+        Contact num: <input type="text" name="contact"> <br>
+
+        <p>What is your Gender</p>
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Others <br>
+
+        <select name="status" id="status">
+            <option value="Single">Single</option>
+            <option value="Married">Married</option>
+            <option value="Widowed">Widowed</option>
+            <option value="Divorced" selected>Divorced</option>
+        </select>   
+
+        <p>What is your vehicle</p>
+        <input type="checkbox" id="vehicle1" name="vehicle" value="Bike">
+        <label for="vehicle1"> I don't have any vehicle </label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle" value="None">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle" value="Car">
+        <label for="vehicle3"> I have a bike</label> <br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
